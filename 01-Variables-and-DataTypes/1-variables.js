@@ -1,6 +1,8 @@
 // Variables in JavaScript
 
 // 1. Using var (old way - function scoped)
+console.log("=============Data Types=============");
+
 var name = "Rajvirsinh";
 console.log("Using var:", name);
 
