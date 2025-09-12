@@ -18,10 +18,10 @@ var a = 20; // allowed with var
 console.log("Re-declared var:", a);
 
 let b = 30;
-// let b = 40; ❌ Not allowed
-b = 40; // ✅ allowed (re-assignment)
+// let b = 40;  Not allowed
+b = 40; //  allowed (re-assignment)
 console.log("Re-assigned let:", b);
 
 const c = 50;
-// c = 60; ❌ Not allowed
+// c = 60;  Not allowed
 console.log("Const remains same:", c);
