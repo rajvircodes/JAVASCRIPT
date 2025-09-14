@@ -22,7 +22,7 @@ This repo contains all my practice codes, notes, and examples while learning Jav
 ## 📌 Topics Covered
 - ✅ Variables (`var`, `let`, `const`)
 - ✅ Data Types (Primitive & Non-Primitive)
-- 🔜 Operators and Expressions
+- ✅ Operators and Expressions
 - 🔜 Control Flow (if-else, switch)
 - 🔜 Loops (for, while, do-while)
 - 🔜 Functions & Arrow Functions
