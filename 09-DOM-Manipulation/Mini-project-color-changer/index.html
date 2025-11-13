@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Changer | DOM Practice</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      transition: background-color 0.3s ease;
+    }
+    h1 {
+      color: #333;
+      margin-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .color-box {
+      margin: 30px auto;
+      width: 120px;
+      height: 120px;
+      background: lightgray;
+      border-radius: 12px;
+      line-height: 120px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Color Changer App</h1>
+  <div class="color-box" id="colorBox">#f2f2f2</div>
+  <button id="changeColorBtn">Change Color</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
