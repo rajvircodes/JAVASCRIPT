@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="num">0</h1>
+        <div class="btns">
+            <button class="btn" id="increase">Increase</button>
+            <button class="btn" id="descrease">Descrease</button>
+            <button class="btn" id="reset">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let numEl = document.getElementById("num");
+        let increaseEl = document.getElementById("increase");
+        let decreaseEl = document.getElementById("decrease");
+        let resetEl = document.getElementById("reset")
+
+        let number = 0
+        numEl = number;
+        increaseEl.addEventListener("click", ()=>{
+            number+=1;
+            numEl.textContent = number;
+
+            console.log(numEl);
+            console.log(number);
+            
+            
+        })
+
+
+
+    </script>   
+</body>
+</html>
