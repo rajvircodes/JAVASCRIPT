@@ -1,106 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counter</title>
-</head>
+  </head>
 
-<style>
+  <style>
     body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .container {
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 400px;
-        /* border: 2px solid black; */
-        border-radius: 12px;
-        padding: 10pz;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 400px;
+      /* border: 2px solid black; */
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     }
 
     h1 {
-        font-size: 5rem;
+      font-size: 5rem;
     }
 
     .btns button {
-        padding: 10px 20px;
-        border: none;
-        outline: none;
-        margin-right: 5px;
-        border-radius: 4px;
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      margin-right: 5px;
+      border-radius: 4px;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    
-   
     #increase {
-        background-color: green;
-
+      background-color: green;
     }
-
 
     #decrease {
-        background-color: red;
+      background-color: red;
     }
 
     #reset {
-        background-color: rgb(32, 129, 198);
+      background-color: rgb(32, 129, 198);
     }
-
-
-</style>
-<body>
+  </style>
+  <body>
     <div class="container">
-        <h1 id="num">0</h1>
-        <div class="btns">
-            <button class="btn" id="increase">Increase</button>
-            <button class="btn" id="decrease">Descrease</button>
-            <button class="btn" id="reset">Reset</button>
-        </div>
+      <h1 id="num">0</h1>
+      <div class="btns">
+        <button class="btn" id="increase">Increase</button>
+        <button class="btn" id="decrease">Descrease</button>
+        <button class="btn" id="reset">Reset</button>
+      </div>
     </div>
 
     <script>
-        let numEl = document.getElementById("num");
-        let increaseEl = document.getElementById("increase");
-        let decreaseEl = document.getElementById("decrease");
-        let resetEl = document.getElementById("reset")
+      let numEl = document.getElementById("num");
+      let increaseEl = document.getElementById("increase");
+      let decreaseEl = document.getElementById("decrease");
+      let resetEl = document.getElementById("reset");
+
+      let number = 0;
 
 
-        let number = 0;
-        increaseEl.addEventListener("click",()=> {
-            console.log("Hello world");
-            number++;
-            numEl.textContent = number;
+      function updateUI(){
+        if(number > 0){
+            numEl.style.color = "green"
+        }else if (number < 0){
+            numEl.style.color = "red"
+        }else if (number === 0){
+            numEl.style.color = "gray"
+        }
+      }
 
-        });
+      increaseEl.addEventListener("click", () => {
+        number++;
+        updateUI()
+        numEl.textContent = number;
+      });
 
+      decreaseEl.addEventListener("click", () => {
+        number--;
+        updateUI()
+        numEl.textContent = number;
+      });
 
-        decreaseEl.addEventListener("click",()=>{
-            number--;
-            numEl.textContent =number;
-            console.log("HEllo");
-            
-        });
-
-
-      resetEl.addEventListener("click", ()=> {
+      resetEl.addEventListener("click", () => {
         number = 0;
         numEl.textContent = number;
-      })
-        
-
-    </script>   
-</body>
+        updateUI()
+      });
+     
+    </script>
+  </body>
 </html>
