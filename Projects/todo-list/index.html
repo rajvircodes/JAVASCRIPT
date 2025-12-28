@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do</title>
+  </head>
+  <style>
+
+/* --- Global Reset & Body Styles --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Light, calming background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    padding-top: 50px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* --- Container for the whole application --- */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle lift */
+}
+
+/* --- Input and Button Group --- */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#input:focus {
+    border-color: #4CAF50; /* Highlight focus with primary color */
+    outline: none;
+}
+
+#btn {
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Green primary color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#btn:hover {
+    background-color: #45a049;
+}
+
+#btn:active {
+    transform: scale(0.98);
+}
+
+/* --- Task List Styles (UL) --- */
+#listItem {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Individual Task Styles (LI) --- */
+#listItem li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#listItem li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+/* Style for the task text */
+#listItem li span {
+    flex-grow: 1;
+    margin-left: 10px; /* Space between checkbox/text */
+    word-break: break-word; /* Prevent overflow */
+}
+
+/* --- Delete Button Styles (Class: delete-btn) --- */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 18px; /* Larger icon */
+    padding: 5px;
+    transition: color 0.2s;
+    line-height: 1; /* Keep icon vertically centered */
+    margin-left: auto; /* Push button to the far right */
+}
+
+.delete-btn:hover {
+    color: #e74c3c; /* Red color on hover */
+}
+</style>
+ 
+  <body>
+    <div class="container">
+      <input type="text" id="input" value="" />
+      <button id="btn">Add task</button>
+      <ul id="listItem"></ul>
+    </div>
+
+    <script>
+      const inputEl = document.getElementById("input");
+      const btnEl = document.getElementById("btn");
+      const listEl = document.getElementById("listItem");
+
+      btnEl.addEventListener("click", () => {
+        const li = document.createElement("li");
+        li.innerHTML = ` 
+                <button class="delete-btn"> ❌ </button> 
+           <span>${inputEl.value}</span>
+            `;
+        listEl.appendChild(li);
+        inputEl.value = "";
+      });
+
+      listEl.addEventListener("click", (e) => {
+        if (e.target.classList.contains("delete-btn")) {
+          e.target.parentElement.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
