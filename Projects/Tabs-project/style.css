@@ -57,3 +57,9 @@ button:nth-child(3){
     transition: all 0.3s linear;
     letter-spacing: 0.25rem;
 }
+
+.button:hover:not(.live){
+    background-color: #e93b81;
+    color: white;
+}
+
